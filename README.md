@@ -1,6 +1,19 @@
 
+# SommerESP
+
+A plug and play ESP32-C3 board to control Sommer garage doors based on ESPHOME
+
+This combo is designed to replace the Sommer Conex Module and the Sommer Output OC Module. 
+
+## How it works
+The Sommer Conex Module is designed to replicate the press of the buttons on the controller of the garage door and the Sommer Output OC just provide the signal for the status and 24 Volts DC.  
+
+This project takes the 24V and converts it to 3.3V for the ESP32-C3 module, the DC regulator on the power board can take from 4.5V to 40V and cleanly output 3.3V then transfer it to the Control board along with the status signal.  
+
+The ESP controller simulate the press of the buttons using a pair of optocouplers, simple enough. You can also attach other things to this board, I left a couple of GPIOs on exposed pins along with the serial connection required to flash the module.
+
 ## Instructions
-You can buy here (soon) the kit that includes the two boards and a cable or you can build one yourself. You can find the BOM (bill of materials) [here](/Kicad/project/bom/ibom.html) and the gerber files [here](/Kicad/project/gerbers/). I used JLCPCB for my orders but there are also other manufactures.
+You can buy here (soon) the kit that includes the two boards and a cable or you can build one yourself. You can find the BOM (bill of materials) [here](https://htmlpreview.github.io/?https://github.com/exico91/SommerESP/blob/main/Kicad/project/bom/ibom.html) and the gerber files [here](/Kicad/project/gerbers/). I used JLCPCB for my orders but there are also other manufactures.
 
 ### Installation
  1. Remove the plug from the wall, or cut off power to the Sommer garage door controller
