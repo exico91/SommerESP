@@ -94,7 +94,7 @@ binary_sensor:
 switch:
   - platform: gpio
     pin: 
-      number: 6
+      number: 7
       #inverted: True
     name: "Garage door Open Switch"
     id: open_switch
@@ -104,7 +104,7 @@ switch:
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: 
-      number: 7
+      number: 6
       #inverted: True
     name: "Garage door close Switch"
     id: close_switch
