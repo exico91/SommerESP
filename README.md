@@ -13,7 +13,7 @@ This project takes the 24V and converts it to 3.3V for the ESP32-C3 module, the 
 The ESP controller simulate the press of the buttons using a pair of optocouplers, simple enough. You can also attach other things to this board, I left a couple of GPIOs on exposed pins along with the serial connection required to flash the module.
 
 ## Instructions
-You can buy here (soon) the kit that includes the two boards and a cable or you can build one yourself. You can find the BOM (bill of materials) [here](https://htmlpreview.github.io/?https://github.com/exico91/SommerESP/blob/main/Kicad/project/bom/ibom.html) and the gerber files [here](/Kicad/project/gerbers/). I used JLCPCB for my orders but there are also other manufactures.
+You can buy [here](https://www.tindie.com/products/exico91/sommeresp/) the kit that includes the two boards and a cable or you can build one yourself. You can find the BOM (bill of materials) [here](https://htmlpreview.github.io/?https://github.com/exico91/SommerESP/blob/main/Kicad/project/bom/ibom.html) and the gerber files [here](/Kicad/project/gerbers/). I used JLCPCB for my orders but there are also other manufactures.
 
 ### Installation
  1. Remove the plug from the wall, or cut off power to the Sommer garage door controller
