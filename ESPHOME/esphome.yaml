@@ -1,20 +1,27 @@
 esphome:
-  name: ${device_name}
+  name: sommeresp
+  name_add_mac_suffix: true
+  project:
+    name: "esphome.sommeresp"
+    version: "0.3"
 
 substitutions:
-  device_name: "Sommer Garage Door"
-  wifi_ssid: "YOUR WIFI SSID"
-  wifi_password: "YOUR WIFI PASSWORD"
-  hotspot_password: "AP PASSWORD"
-  ha_encryption_key: "ENCRYPTION KEY FOR HA"
-  webserver_password: "webpage password"
-  ota_password: "ota password"
+  device_name: "SommerESP"
+  wifi_ssid: "YOUR WIFI SSID"
+  wifi_password: "YOUR WIFI PASSWORD"
+  # Change this password with something secure
+  hotspot_password: "sommeresp"
+  # Change this key with you own
+  ha_encryption_key: "OctNokxarTW7jlhieWZINmZ0+z6JhWCcXRLYi0WAqK4="
+  webserver_password: "sommeresp"
+  # Change this key with you own
+  ota_password: "entwwba9ki3ccg6yes9n32yv588w2xin"
 
 
 esp32:
-  board: esp32-c3-devkitm-1
-  framework:
-    type: arduino
+  board: esp32-c3-devkitm-1
+  framework:
+    type: arduino
 
 
 # Enable logging
@@ -22,128 +29,135 @@ logger:
 
 # Enable Home Assistant API
 api:
-  encryption:
-    key: ${ha_encryption_key}
+  encryption:
+    key: ${ha_encryption_key}
 
 ota:
-  password: ${ota_password}
+  password: ${ota_password}
 
 wifi:
-  ssid: ${wifi_ssid}
-  password: ${wifi_password}
+# Uncomment these two lines to enable autoconnect
+#  ssid: ${wifi_ssid}
+#  password: ${wifi_password}
 
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-    ssid: ${device_name}
-    password: ${hotspot_password}
-  
-  # Optional manual IP
-#  manual_ip:
-#    static_ip: 192.168.82.208
-#    gateway: 192.168.82.1
-#    subnet: 255.255.255.0
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+# Uncomment this line to set a custom SSID instead of default name+mac
+#    ssid: "SSID"
+
+# Uncomment to setup a password for the hotspot
+#    password: ${hotspot_password}
+  
+  # Optional manual IP
+#  manual_ip:
+#    static_ip: 192.168.82.208
+#    gateway: 192.168.82.1
+#    subnet: 255.255.255.0
 
 
 captive_portal:
-    
+    
 # Enable Web server (optional).
 web_server:
-  port: 80
-  auth:
-    username: "admin"
-    password: ${webserver_password}
+  port: 80
+
+# Uncomment to setup user and password for the dashboard
+#  auth:
+#    username: "admin"
+#    password: ${webserver_password}
 
 #enable bluetooth proxy
 #bluetooth_proxy:
 
 text_sensor:
-  # Expose ESPHome version as sensor.
-  - platform: version
-    name: ${device_name} ESPHome Version
-  # Expose WiFi information as sensors.
-  - platform: wifi_info
-    ip_address:
-      name: ${device_name} IP
-    ssid:
-      name: ${device_name} SSID
-    
+  # Expose ESPHome version as sensor.
+  - platform: version
+    name: ${device_name} ESPHome Version
+  # Expose WiFi information as sensors.
+  - platform: wifi_info
+    ip_address:
+      name: ${device_name} IP
+    ssid:
+      name: ${device_name} SSID
+    
 sensor:
-  - platform: wifi_signal
-    name: ${device_name} Wifi Signal Strength
-    update_interval: 60s
-  - platform: uptime
-    name: ${device_name} Uptime
-  - platform: adc
-    pin: 4
-    name: "Door Feedback"
-    update_interval: 2s
-    id: status_feedback
-    internal: True
+  - platform: wifi_signal
+    name: ${device_name} Wifi Signal Strength
+    update_interval: 60s
+  - platform: uptime
+    name: ${device_name} Uptime
+  - platform: adc
+    pin: 4
+    name: "Door Feedback"
+    update_interval: 2s
+    id: status_feedback
+    internal: True
 
 binary_sensor:
-  - platform: analog_threshold
-    name: "Door status"
-    sensor_id: status_feedback
-    threshold: 0.015
-    device_class: garage_door
-    id: door_status
-    filters:
-      - invert:
-    internal: True
+  - platform: analog_threshold
+    name: "Door status"
+    sensor_id: status_feedback
+    threshold: 0.015
+    device_class: garage_door
+    id: door_status
+    filters:
+      - invert:
+    internal: True
 
 switch:
-  - platform: gpio
-    pin: 
-      number: 7
-      #inverted: True
-    name: "Garage door Open Switch"
-    id: open_switch
-    on_turn_on:
-      - delay: 250ms
-      - switch.turn_off: open_switch
-    restore_mode: ALWAYS_OFF
-  - platform: gpio
-    pin: 
-      number: 6
-      #inverted: True
-    name: "Garage door close Switch"
-    id: close_switch
-    on_turn_on:
-      - delay: 250ms
-      - switch.turn_off: close_switch
-    restore_mode: ALWAYS_OFF
-  - platform: restart
-    name: "Restart ESP"
+  - platform: gpio
+    pin: 
+      number: 7
+      #inverted: True
+    name: "Garage door Open Switch"
+    id: open_switch
+    on_turn_on:
+      - delay: 250ms
+      - switch.turn_off: open_switch
+    restore_mode: ALWAYS_OFF
+  - platform: gpio
+    pin: 
+      number: 6
+      #inverted: True
+    name: "Garage door close Switch"
+    id: close_switch
+    on_turn_on:
+      - delay: 250ms
+      - switch.turn_off: close_switch
+    restore_mode: ALWAYS_OFF
+  - platform: restart
+    name: "Restart ESP"
 
 cover:
-  - platform: template
-    device_class: garage
-    name: "Garage door"
-    open_action:
-      # Cancel any previous action
-      - switch.turn_off: close_switch
-      # Turn the OPEN switch on briefly
-      - switch.turn_on: open_switch
-      - delay: 250ms
-      - switch.turn_off: open_switch
-    close_action:
-      - switch.turn_off: open_switch
-      - switch.turn_on: close_switch
-      - delay: 250ms
-      - switch.turn_off: close_switch
-    stop_action:
-      - switch.turn_off: close_switch
-      - switch.turn_off: open_switch
-    #optimistic: true
-    lambda: |-
-      if (id(door_status).state) {
-        return COVER_OPEN;
-      } else {
-        return COVER_CLOSED;
-      }
-    #assumed_state: true
+  - platform: template
+    device_class: garage
+    name: "Garage door"
+    open_action:
+      # Cancel any previous action
+      - switch.turn_off: close_switch
+      # Turn the OPEN switch on briefly
+      - switch.turn_on: open_switch
+      - delay: 250ms
+      - switch.turn_off: open_switch
+    close_action:
+      - switch.turn_off: open_switch
+      - switch.turn_on: close_switch
+      - delay: 250ms
+      - switch.turn_off: close_switch
+    stop_action:
+      - switch.turn_off: close_switch
+      - switch.turn_off: open_switch
+    #optimistic: true
+    lambda: |-
+      if (id(door_status).state) {
+        return COVER_OPEN;
+      } else {
+        return COVER_CLOSED;
+      }
+    #assumed_state: true
 
 status_led:
-  pin:
-    number: 10
-    inverted: true
+  pin:
+    number: 10
+    inverted: true
+    
