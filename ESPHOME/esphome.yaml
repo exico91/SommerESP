@@ -86,22 +86,19 @@ sensor:
     update_interval: 60s
   - platform: uptime
     name: ${device_name} Uptime
-  - platform: adc
-    pin: 4
-    name: "Door Feedback"
-    update_interval: 2s
-    id: status_feedback
-    internal: True
+
 
 binary_sensor:
-  - platform: analog_threshold
+  - platform: gpio
     name: "Door status"
-    sensor_id: status_feedback
-    threshold: 0.015
+    pin:
+      number: 4
+      inverted: True
+      mode:
+        input: True
+        pullup: True
     device_class: garage_door
     id: door_status
-    filters:
-      - invert:
     internal: True
 
 switch:
