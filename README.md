@@ -40,9 +40,17 @@ GND
 Press BOOT while powering on the programmer to send the controller in flashing mode.
 
 ## Compatibility
-This project should work with Sommer Base+ and Pro+.
+This project should work with Sommer Base+, Pro+ and Evo+.
 The main focus of this project is ESPHome and Homeassistant but you can flash whatever you want on the ESP32-C3.
 Check [here](/pinout.md) for the pinout.
+
+**Confirmed working models:**
+
+| **Model** | **Notes**                                                                                                                                                  | **Credits** |
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| 2060 Evo+ | The keypad plug has 5 pins instead of 3. Just plug the module on the middle leaving pin 1 and 5 free. See photo for reference [here](/pics/2060+notes.jpg) | Severnt     |
+| 9110 Pro+ | Original installation that created this project. This model has a wall mount control board with a 2 button keypad.                                         | Alessio D   |
+|           |                                                                                                                                                            |             |
  
  
 ## Origins
