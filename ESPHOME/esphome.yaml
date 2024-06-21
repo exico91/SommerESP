@@ -27,6 +27,7 @@ logger:
 api:
 
 ota:
+  - platform: esphome
 
 wifi:
 # Uncomment these two lines to enable autoconnect
