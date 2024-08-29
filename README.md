@@ -46,11 +46,12 @@ Check [here](/pinout.md) for the pinout.
 
 **Confirmed working models:**
 
-| **Model** | **Notes**                                                                                                                                                  | **Credits** |
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-| 2060 Evo+ | The keypad plug has 5 pins instead of 3. Just plug the module on the middle leaving pin 1 and 5 free. See photo for reference [here](/pics/2060+notes.jpg) | Severnt     |
-| 9110 Pro+ | Original installation that created this project. This model has a wall mount control board with a 2 button keypad.                                         | Alessio D   |
-|           |                                                                                                                                                            |             |
+| **Model**  | **Notes**                                                                                                                                                  | **Credits** |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| 9080 Base+ | The keypad plug is present but there is no keypad, just plug the SommerESP there.                                                                          | tim-kiefer  |
+| 2060 Evo+  | The keypad plug has 5 pins instead of 3. Just plug the module on the middle leaving pin 1 and 5 free. See photo for reference [here](/pics/2060+notes.jpg) | Severnt     |
+| 9110 Pro+  | Original installation that created this project. This model has a wall mount control board with a 2 button keypad.                                         | Alessio D   |
+|            |                                                                                                                                                            |             |
  
  
 ## Origins
