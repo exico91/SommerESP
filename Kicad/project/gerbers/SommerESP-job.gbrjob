@@ -3,18 +3,18 @@
     "GenerationSoftware": {
       "Vendor": "KiCad",
       "Application": "Pcbnew",
-      "Version": "8.0.1"
+      "Version": "9.0.1"
     },
-    "CreationDate": "2024-05-08T13:39:32+02:00"
+    "CreationDate": "2025-09-06T18:12:35+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "SommerESP",
       "GUID": "536f6d6d-6572-4455-9350-2e6b69636164",
-      "Revision": "rev?"
+      "Revision": "2.0"
     },
     "Size": {
-      "X": 50.8,
+      "X": 41.8,
       "Y": 48.675
     },
     "LayerNumber": 2,
@@ -27,7 +27,7 @@
       "PadToPad": 0.2,
       "PadToTrack": 0.2,
       "TrackToTrack": 0.2,
-      "MinLineWidth": 0.5,
+      "MinLineWidth": 0.4,
       "TrackToRegion": 0.508,
       "RegionToRegion": 0.508
     }
