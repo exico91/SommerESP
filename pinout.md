@@ -25,7 +25,7 @@ The main chip is a ESP32-C3-WROOM-02
                 GPIO3
             </td>
             <td>
-                GPIO Header 1st Pin
+                GPIO Header 7th Pin
             </td>
         </tr>
         <tr>
@@ -84,12 +84,28 @@ The main chip is a ESP32-C3-WROOM-02
                 Status Led
             </td>
         </tr>
+                <tr>
+            <td>
+                GPIO18
+            </td>
+            <td>
+                GPIO Header 5th pin
+            </td>
+        </tr>
+                <tr>
+            <td>
+                GPIO19
+            </td>
+            <td>
+                GPIO Header 6th pin
+            </td>
+        </tr>
         <tr>
             <td>
                 GPIO20
             </td>
             <td>
-                GPIO Header Serial RX 5th pin
+                GPIO Header Serial RX 3rd pin
             </td>
         </tr>
         <tr>

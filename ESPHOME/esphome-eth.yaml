@@ -1,5 +1,5 @@
 esphome:
-  name: sommeresp
+  name: sommeresp-eth
   name_add_mac_suffix: true
   project:
     name: "esphome.sommeresp"
@@ -29,27 +29,19 @@ api:
 ota:
   - platform: esphome
 
-wifi:
-# Uncomment these two lines to enable autoconnect
-#  ssid: ${wifi_ssid}
-#  password: ${wifi_password}
+ethernet:
+  type: W5500
+  clk_pin: GPIO18
+  mosi_pin: GPIO19
+  miso_pin: GPIO3
+  cs_pin: GPIO5
+  interrupt_pin: GPIO20
 
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-# Uncomment this line to set a custom SSID instead of default name+mac
-#    ssid: "SSID"
-
-# Uncomment to setup a password for the hotspot
-#    password: ${hotspot_password}
-  
-  # Optional manual IP
-#  manual_ip:
-#    static_ip: 192.168.82.208
-#    gateway: 192.168.82.1
+# Optional Static IP
+#  manual_ip: 
+#    static_ip: 192.168.1.60
+#    gateway: 192.168.1.1
 #    subnet: 255.255.255.0
-
-
-captive_portal:
     
 # Enable Web server (optional).
 web_server:
@@ -60,24 +52,21 @@ web_server:
 #    username: "admin"
 #    password: ${webserver_password}
 
-#enable bluetooth proxy
-#bluetooth_proxy:
 
 text_sensor:
   # Expose ESPHome version as sensor.
   - platform: version
     name: ${device_name} ESPHome Version
-  # Expose WiFi information as sensors.
-  - platform: wifi_info
+  # Expose Ethernet information
+  - platform: ethernet_info
     ip_address:
-      name: ${device_name} IP
-    ssid:
-      name: ${device_name} SSID
+      name: ESP IP Address 
+    dns_address: 
+      name: ESP DNS Address
+    mac_address: 
+      name: ESP MAC Address
     
 sensor:
-  - platform: wifi_signal
-    name: ${device_name} Wifi Signal Strength
-    update_interval: 60s
   - platform: uptime
     name: ${device_name} Uptime
   - platform: adc
