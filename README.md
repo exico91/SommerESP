@@ -65,6 +65,7 @@ Check [here](/pinout.md) for the pinout.
 | 2060 Evo+  | The keypad plug has 5 pins instead of 3. Just plug the module on the middle leaving pin 1 and 5 free. See photo for reference [here](/pics/2060+notes.jpg) | Severnt     |
 | 9110 Pro+  | Original installation that created this project. This model has a wall mount control board with a 2 button keypad.                                         | Alessio D   |
 | S 9050 pro | Need to manually add the DIP switch selector. Check [here](https://github.com/exico91/SommerESP/issues/5#issuecomment-2755661908)                     | M3c4tr0x    |
+| A800 XL    | Compatible but the Conex pins are shifted. Requires board version 2 or jumper cables.                                                                    | [jkremlacek](https://github.com/jkremlacek) |
  
  
 ## 💡 Origins
