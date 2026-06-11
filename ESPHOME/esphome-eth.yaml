@@ -87,6 +87,12 @@ binary_sensor:
       - invert:
     internal: True
 
+globals:
+  - id: last_direction
+    type: int
+    restore_value: no
+    initial_value: '0'  # 0=idle, 1=opening, 2=closing
+
 switch:
   - platform: gpio
     pin: 
@@ -116,20 +122,40 @@ cover:
     device_class: garage
     name: "Garage door"
     open_action:
-      # Cancel any previous action
+      - globals.set:
+          id: last_direction
+          value: '1'
       - switch.turn_off: close_switch
-      # Turn the OPEN switch on briefly
       - switch.turn_on: open_switch
       - delay: 250ms
       - switch.turn_off: open_switch
     close_action:
+      - globals.set:
+          id: last_direction
+          value: '2'
       - switch.turn_off: open_switch
       - switch.turn_on: close_switch
       - delay: 250ms
       - switch.turn_off: close_switch
     stop_action:
-      - switch.turn_off: close_switch
-      - switch.turn_off: open_switch
+      - if:
+          condition:
+            lambda: 'return id(last_direction) == 1;'
+          then:
+            - switch.turn_on: open_switch
+            - delay: 250ms
+            - switch.turn_off: open_switch
+          else:
+            - if:
+                condition:
+                  lambda: 'return id(last_direction) == 2;'
+                then:
+                  - switch.turn_on: close_switch
+                  - delay: 250ms
+                  - switch.turn_off: close_switch
+      - globals.set:
+          id: last_direction
+          value: '0'
     #optimistic: true
     lambda: |-
       if (id(door_status).state) {
