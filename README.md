@@ -68,6 +68,16 @@ Check [here](/pinout.md) for the pinout.
 | A800 XL    | Compatible but the Conex pins are shifted. Requires board version 2 or jumper cables.                                                                    | [jkremlacek](https://github.com/jkremlacek) |
  
  
+## 📦 Release Log
+
+| **Version** | **ESPHome** | **Changes** |
+|-------------|-------------|-------------|
+| 1.0 | — | Initial release |
+| 1.3 | 2024.6.1 | Added compatibility for ESPHome 2024.6.1 |
+| 2.0 | 2025.8.3 | Added compatibility for ESPHome 2025.8.3 |
+| 3.0 | 2026.5.3 | Added compatibility for ESPHome 2026.5.3+, added Ethernet module version |
+| 3.1 | 2026.5.3 | Cover stop function is now working |
+
 ## 💡 Origins
 A thank you to https://github.com/jampez77/garage_door_sensor/ and https://github.com/azrael783/esphome_garagedoor_opener for giving me the ispiration to do this project, a lot of the code and core functionality is similar to these projects. Unfortunately neither did what I needed, cheap and invisible installation. Unfortunately the two Sommer modules (Conex and Output OC) are not cheap for what they are and using a DC-DC converter and relais externally is bulky and unsightly. I took the matter into my hands and now is almost plug and play and places where the two Sommer modules were.
 
