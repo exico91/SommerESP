@@ -5,7 +5,7 @@
 	(uuid "fdfaab82-b631-42c7-9b66-01e568778cad")
 	(paper "A4")
 	(title_block
-		(rev "3.0")
+		(rev "3.1")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x03_Female"
@@ -4398,6 +4398,10 @@
 		(at 205.74 72.39)
 		(uuid "521d0b80-57e5-475c-ab12-a2c4420c5051")
 	)
+	(no_connect
+		(at 205.74 60.96)
+		(uuid "e6f635f5-bd9e-4e8a-83db-9141b2e634b5")
+	)
 	(wire
 		(pts
 			(xy 241.3 76.2) (xy 236.22 76.2)
@@ -4973,6 +4977,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "SommerSIG"
+		(shape input)
+		(at 205.74 58.42 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4df05c7b-e1d6-4f5c-b313-6b3fc0f41c94")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 219.35 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -5814,8 +5842,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C116692"
-			(at 226.06 80.0735 0)
+		(property "LCSC PN" "C116692"
+			(at 226.06 83.82 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6219,8 +6247,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C497961"
-			(at 153.9875 119.8712 0)
+		(property "LCSC PN" "C497961"
+			(at 152.4 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6324,6 +6352,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+24V")
+		(at 205.74 63.5 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "256323fb-b59b-4b93-9b89-db0dd5a63fe2")
+		(property "Reference" "#PWR0143"
+			(at 201.93 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+24V"
+			(at 209.55 63.5 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 205.74 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 205.74 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "effc0063-3d63-4732-be9e-c293b4c35e52")
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "#PWR0143")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 100.33 92.71 90)
 		(unit 1)
@@ -6387,8 +6493,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2930027"
-			(at 100.33 88.2736 0)
+		(property "LCSC PN" "C2930027"
+			(at 100.33 92.71 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6637,8 +6743,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C146243"
-			(at 118.8212 25.8353 0)
+		(property "LCSC PN" "C146243"
+			(at 118.11 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6730,8 +6836,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2930027"
-			(at 60.96 99.7036 0)
+		(property "LCSC PN" "C2930027"
+			(at 60.96 104.14 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6820,8 +6926,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2905192"
-			(at 33.02 80.3181 0)
+		(property "LCSC PN" "C2905192"
+			(at 33.02 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6912,8 +7018,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2934560"
-			(at 78.1559 126.6571 0)
+		(property "LCSC PN" "C2934560"
+			(at 76.2 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7068,6 +7174,85 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 205.74 55.88 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4f1e192c-431d-4c80-9718-cbf69ca8f06a")
+		(property "Reference" "#PWR0142"
+			(at 212.09 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 208.9149 55.4462 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6fa23bce-ddf3-4183-8f58-c44e5a7618b9")
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "#PWR0142")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 264.16 41.91 0)
 		(unit 1)
@@ -7134,8 +7319,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C412252"
-			(at 266.4841 41.0816 0)
+		(property "LCSC PN" "C412252"
+			(at 264.16 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7217,6 +7402,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x08, script generated"
+			(at 161.29 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC PN" "C6332201"
 			(at 161.29 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -7481,8 +7677,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C3017758"
-			(at 45.72 78.1136 0)
+		(property "LCSC PN" "C3017758"
+			(at 45.72 82.55 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7572,8 +7768,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C5449114"
-			(at 212.09 25.0571 0)
+		(property "LCSC PN" "C5449114"
+			(at 212.09 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7664,8 +7860,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2718488"
-			(at 199.9488 71.9547 0)
+		(property "LCSC PN" "C2718488"
+			(at 200.66 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7762,8 +7958,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C5674"
-			(at 51.8541 110.9316 0)
+		(property "LCSC PN" "C5674"
+			(at 49.53 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7853,8 +8049,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C116692"
-			(at 146.05 109.8636 0)
+		(property "LCSC PN" "C116692"
+			(at 146.05 114.3 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7968,8 +8164,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C402212"
-			(at 238.252 70.4763 0)
+		(property "LCSC PN" "C917030"
+			(at 236.22 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8061,8 +8257,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C49257"
-			(at 118.8212 37.2653 0)
+		(property "LCSC PN" "C49257"
+			(at 118.11 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8312,8 +8508,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2930027"
-			(at 60.96 78.1136 0)
+		(property "LCSC PN" "C2930027"
+			(at 60.96 82.55 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8404,8 +8600,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C5137467"
-			(at 31.5341 146.4916 0)
+		(property "LCSC PN" "C5137467"
+			(at 29.21 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8667,6 +8863,104 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x04_Female")
+		(at 200.66 60.96 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "80e9a656-fbf9-4c9f-8fed-695fb0348e48")
+		(property "Reference" "J7"
+			(at 199.9488 60.5247 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SOMMER OUTPUT OC 7.5mm"
+			(at 199.9488 57.9878 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical"
+			(at 200.66 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 200.66 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC PN" "C2718488"
+			(at 200.66 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fc478a20-8b0f-4c63-91c2-2058b48e174b")
+		)
+		(pin "2"
+			(uuid "2c8093a2-ed98-436b-9968-6e9f613c61d1")
+		)
+		(pin "3"
+			(uuid "7dedc80b-0180-4b88-b74e-5d342e7b9ab9")
+		)
+		(pin "4"
+			(uuid "c32b12f6-1a3e-4622-9bce-11c882080841")
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND2")
 		(at 76.2 172.72 0)
 		(unit 1)
@@ -8809,8 +9103,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C397047"
-			(at 153.9875 108.4412 0)
+		(property "LCSC PN" "C397047"
+			(at 152.4 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9133,8 +9427,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C7461364"
-			(at 256.54 33.0231 0)
+		(property "LCSC PN" "C7461364"
+			(at 256.54 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9370,6 +9664,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 67.31 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC PN" "C5190214"
 			(at 67.31 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -9707,8 +10012,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C116692"
-			(at 146.05 121.2936 0)
+		(property "LCSC PN" "C116692"
+			(at 146.05 125.73 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9797,8 +10102,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2905192"
-			(at 33.02 101.9081 0)
+		(property "LCSC PN" "C2905192"
+			(at 33.02 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9889,8 +10194,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2902914"
-			(at 245.872 38.2178 0)
+		(property "LCSC PN" "C2902914"
+			(at 243.84 39.37 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9982,8 +10287,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C222218"
-			(at 243.84 83.169 0)
+		(property "LCSC PN" "C222218"
+			(at 233.68 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10078,8 +10383,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C2930027"
-			(at 100.33 97.1636 0)
+		(property "LCSC PN" "C2930027"
+			(at 100.33 101.6 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10404,8 +10709,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C3017758"
-			(at 45.72 99.7036 0)
+		(property "LCSC PN" "C3017758"
+			(at 45.72 104.14 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10574,8 +10879,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C307525"
-			(at 31.5341 161.7316 0)
+		(property "LCSC PN" "C307525"
+			(at 29.21 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10666,8 +10971,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C5186052"
-			(at 229.87 20.481 0)
+		(property "LCSC PN" "C5186052"
+			(at 229.87 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

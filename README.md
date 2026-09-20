@@ -67,9 +67,16 @@ Check [here](/pinout.md) for the pinout.
 | 9110 Pro+  | Original installation that created this project. This model has a wall mount control board with a 2 button keypad.                                         | Alessio D   |
 | S 9050 pro | Need to manually add the DIP switch selector. Check [here](https://github.com/exico91/SommerESP/issues/5#issuecomment-2755661908)                     | M3c4tr0x    |
 | A800 XL    | Compatible but the Conex pins are shifted. Requires board version 2 or jumper cables.                                                                    | [jkremlacek](https://github.com/jkremlacek) |
+
+> [!WARNING]
+> Please do check the distance between the power pins and the right pin on the button connector. This version of SommerESP is compatible with Sommer boards where the distance is around 9.5 mm or 7.5 mm, just check which is correct and solder the connector for the Conex section in the 9.5 (default) or 7.5 place. If you are buying from Tindie the default will be 9.5, if you need 7.5 please contact me.
+
+![](/pics/distance.jpg)
  
  
 ## 📦 Release Log
+
+### Firmware Release Log
 
 | **Version** | **ESPHome** | **Changes** |
 |-------------|-------------|-------------|
@@ -78,6 +85,14 @@ Check [here](/pinout.md) for the pinout.
 | 2.0 | 2025.8.3 | Added compatibility for ESPHome 2025.8.3 |
 | 3.0 | 2026.5.3 | Added compatibility for ESPHome 2026.5.3+, added Ethernet module version |
 | 3.1 | 2026.5.3 | Cover stop function is now working |
+
+### Hardware Release Log
+
+| **Version** | **Changes** |
+|-------------|-------------|
+| 1.0 - 2.0 | Dual board module with cable |
+| 3.0 | Single board, adds Ethernet compatibility. Supports only 9.5 mm distance |
+| 3.1 | Adds 7.5 mm distance compatibility |
 
 ## 💡 Origins
 A thank you to https://github.com/jampez77/garage_door_sensor/ and https://github.com/azrael783/esphome_garagedoor_opener for giving me the ispiration to do this project, a lot of the code and core functionality is similar to these projects. Unfortunately neither did what I needed, cheap and invisible installation. Unfortunately the two Sommer modules (Conex and Output OC) are not cheap for what they are and using a DC-DC converter and relais externally is bulky and unsightly. I took the matter into my hands and now is almost plug and play and places where the two Sommer modules were.
