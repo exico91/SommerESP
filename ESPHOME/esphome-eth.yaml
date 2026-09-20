@@ -87,6 +87,21 @@ binary_sensor:
       - invert:
     internal: True
 
+  # BOOT button: hold for 10s to factory reset. It acts on release, so the
+  # reboot never happens with GPIO9 held low (which would enter download mode).
+  - platform: gpio
+    pin:
+      number: GPIO9
+      mode: INPUT_PULLUP
+      inverted: true
+    id: boot_button
+    internal: true
+    on_click:
+      min_length: 10s
+      max_length: 60s
+      then:
+        - button.press: factory_reset_button
+
 globals:
   - id: last_direction
     type: int
@@ -116,6 +131,12 @@ switch:
     restore_mode: ALWAYS_OFF
   - platform: restart
     name: "Restart ESP"
+
+button:
+  - platform: factory_reset
+    name: "Factory Reset"
+    id: factory_reset_button
+    entity_category: diagnostic
 
 cover:
   - platform: template

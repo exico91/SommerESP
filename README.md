@@ -53,6 +53,9 @@ GND
 
 Press BOOT while powering on the programmer to send the controller in flashing mode.
 
+### 🔄 Factory reset
+With the provided yaml, holding the BOOT button for 10 seconds and then releasing it factory resets the board (erases the saved Wi-Fi credentials and preferences, then reboots). It can also be triggered from Home Assistant with the "Factory Reset" button.
+
 ## ✅ Compatibility
 This project should work with Sommer Base+, Pro+ and Evo+.
 The main focus of this project is ESPHome and Homeassistant but you can flash whatever you want on the ESP32-C3.
@@ -85,6 +88,7 @@ Check [here](/pinout.md) for the pinout.
 | 2.0 | 2025.8.3 | Added compatibility for ESPHome 2025.8.3 |
 | 3.0 | 2026.5.3 | Added compatibility for ESPHome 2026.5.3+, added Ethernet module version |
 | 3.1 | 2026.5.3 | Cover stop function is now working |
+| 3.2 | 2026.9.0 | Added factory reset function to the BOOT button (hold for 10 seconds) |
 
 ### Hardware Release Log
 
