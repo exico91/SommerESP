@@ -5,7 +5,8 @@
 	(uuid "fdfaab82-b631-42c7-9b66-01e568778cad")
 	(paper "A4")
 	(title_block
-		(rev "3.1")
+		(title "SommerESP")
+		(rev "3.2")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x03_Female"
@@ -1109,6 +1110,129 @@
 						)
 					)
 					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3561,6 +3685,105 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+24V"
 			(power global)
 			(pin_names
@@ -4377,6 +4600,12 @@
 		(uuid "0aff5195-d6ec-4bfd-a94d-b31520d8587a")
 	)
 	(junction
+		(at 38.1 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2eaab5f1-a0c0-4c17-994e-3f5c2d1028cf")
+	)
+	(junction
 		(at 236.22 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4395,11 +4624,15 @@
 		(uuid "d99408e8-5dba-4eb7-be0e-16bfe4d2a983")
 	)
 	(no_connect
-		(at 205.74 72.39)
+		(at 189.23 68.58)
 		(uuid "521d0b80-57e5-475c-ab12-a2c4420c5051")
 	)
 	(no_connect
-		(at 205.74 60.96)
+		(at 189.23 58.42)
+		(uuid "9902c9a0-8a3f-4d89-b2ba-27cd2b03d10d")
+	)
+	(no_connect
+		(at 189.23 48.26)
 		(uuid "e6f635f5-bd9e-4e8a-83db-9141b2e634b5")
 	)
 	(wire
@@ -4611,6 +4844,16 @@
 			(type default)
 		)
 		(uuid "b50e6433-d3c6-41d0-99bd-4ded63344678")
+	)
+	(wire
+		(pts
+			(xy 38.1 76.2) (xy 38.1 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb35915a-89d1-47da-be8a-431573057c73")
 	)
 	(wire
 		(pts
@@ -4982,7 +5225,7 @@
 	)
 	(global_label "SommerSIG"
 		(shape input)
-		(at 205.74 58.42 0)
+		(at 189.23 45.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4992,7 +5235,7 @@
 		)
 		(uuid "4df05c7b-e1d6-4f5c-b313-6b3fc0f41c94")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 219.35 58.42 0)
+			(at 202.84 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5006,7 +5249,7 @@
 	)
 	(global_label "SommerSIG"
 		(shape input)
-		(at 205.74 69.85 0)
+		(at 189.23 66.04 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5016,7 +5259,7 @@
 		)
 		(uuid "599b3d1e-d35c-4dea-9354-3ee4407381fc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 219.35 69.85 0)
+			(at 202.84 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5577,6 +5820,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "SommerSIG"
+		(shape input)
+		(at 189.23 55.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e50cb29e-0bcb-4511-99a4-376d6f5b35cb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 202.84 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -6353,7 +6620,7 @@
 	)
 	(symbol
 		(lib_id "power:+24V")
-		(at 205.74 63.5 270)
+		(at 189.23 50.8 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6363,7 +6630,7 @@
 		(dnp no)
 		(uuid "256323fb-b59b-4b93-9b89-db0dd5a63fe2")
 		(property "Reference" "#PWR0143"
-			(at 201.93 63.5 0)
+			(at 185.42 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6374,7 +6641,7 @@
 			)
 		)
 		(property "Value" "+24V"
-			(at 209.55 63.5 90)
+			(at 193.04 50.8 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6385,7 +6652,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 63.5 0)
+			(at 189.23 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6396,7 +6663,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 63.5 0)
+			(at 189.23 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6407,7 +6674,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 205.74 63.5 0)
+			(at 189.23 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6863,6 +7130,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 204.47 115.57 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "37fdd4d8-914e-4279-adbb-1a183d230379")
+		(property "Reference" "H2"
+			(at 207.01 114.2999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 207.01 116.8399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:ToolingHole_1.152mm"
+			(at 204.47 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 204.47 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Custom:DEALON_TD-1183SN-1.5H-160")
 		(at 33.02 82.55 0)
 		(unit 1)
@@ -7096,6 +7439,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+24V")
+		(at 189.23 60.96 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "48a1d87b-7e55-4a5a-8e8d-bb038ec12cc1")
+		(property "Reference" "#PWR0145"
+			(at 185.42 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+24V"
+			(at 193.04 60.96 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.23 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 189.23 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c6c5d108-8795-468e-a37d-7bd4c3a2c20e")
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "#PWR0145")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 76.2 127 0)
 		(unit 1)
@@ -7175,7 +7596,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 205.74 55.88 90)
+		(at 189.23 43.18 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7186,7 +7607,7 @@
 		(fields_autoplaced yes)
 		(uuid "4f1e192c-431d-4c80-9718-cbf69ca8f06a")
 		(property "Reference" "#PWR0142"
-			(at 212.09 55.88 0)
+			(at 195.58 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7197,7 +7618,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 208.9149 55.4462 90)
+			(at 192.4049 42.7462 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7208,7 +7629,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 55.88 0)
+			(at 189.23 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7219,7 +7640,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 55.88 0)
+			(at 189.23 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7230,7 +7651,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 205.74 55.88 0)
+			(at 189.23 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7796,7 +8217,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Female")
-		(at 200.66 72.39 180)
+		(at 184.15 68.58 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7806,7 +8227,7 @@
 		(dnp no)
 		(uuid "5997a7b8-edcb-4ecd-88ba-52af6016880d")
 		(property "Reference" "J6"
-			(at 199.9488 71.9547 0)
+			(at 183.4388 68.1447 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7816,8 +8237,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SOMMER OUTPUT OC"
-			(at 199.9488 69.4178 0)
+		(property "Value" "SOMMER OUTPUT OC 9.5"
+			(at 183.4388 65.6078 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7827,8 +8248,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical"
-			(at 200.66 72.39 0)
+		(property "Footprint" "SommerCustom:PinSocket_1x04_P2.54mm_Vertical_SLIT"
+			(at 184.15 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7839,7 +8260,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 72.39 0)
+			(at 184.15 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7850,7 +8271,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 200.66 72.39 0)
+			(at 184.15 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7861,7 +8282,7 @@
 			)
 		)
 		(property "LCSC PN" "C2718488"
-			(at 200.66 72.39 0)
+			(at 184.15 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8367,7 +8788,7 @@
 	)
 	(symbol
 		(lib_id "power:+24V")
-		(at 205.74 74.93 270)
+		(at 189.23 71.12 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8377,7 +8798,7 @@
 		(dnp no)
 		(uuid "68a127aa-1ab4-43e2-8360-12732731556c")
 		(property "Reference" "#PWR0124"
-			(at 201.93 74.93 0)
+			(at 185.42 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8388,7 +8809,7 @@
 			)
 		)
 		(property "Value" "+24V"
-			(at 209.55 74.93 90)
+			(at 193.04 71.12 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8399,7 +8820,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 74.93 0)
+			(at 189.23 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8410,7 +8831,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 74.93 0)
+			(at 189.23 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8421,7 +8842,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 205.74 74.93 0)
+			(at 189.23 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8438,6 +8859,82 @@
 			(project "SommerESP"
 				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
 					(reference "#PWR0124")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 204.47 121.92 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6b51576a-b990-459b-9407-00d4ee9889c3")
+		(property "Reference" "H3"
+			(at 207.01 120.6499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 207.01 123.1899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:ToolingHole_1.152mm"
+			(at 204.47 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 204.47 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -8628,7 +9125,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 205.74 67.31 90)
+		(at 189.23 63.5 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8639,7 +9136,7 @@
 		(fields_autoplaced yes)
 		(uuid "7168d75f-c4c3-45c5-a65f-b02421c9bdf5")
 		(property "Reference" "#PWR0125"
-			(at 212.09 67.31 0)
+			(at 195.58 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8650,7 +9147,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 208.9149 66.8762 90)
+			(at 192.4049 63.0662 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8661,7 +9158,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 67.31 0)
+			(at 189.23 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8672,7 +9169,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 67.31 0)
+			(at 189.23 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8683,7 +9180,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 205.74 67.31 0)
+			(at 189.23 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8864,7 +9361,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Female")
-		(at 200.66 60.96 180)
+		(at 184.15 48.26 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8874,7 +9371,7 @@
 		(dnp no)
 		(uuid "80e9a656-fbf9-4c9f-8fed-695fb0348e48")
 		(property "Reference" "J7"
-			(at 199.9488 60.5247 0)
+			(at 183.4388 47.8247 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8885,7 +9382,7 @@
 			)
 		)
 		(property "Value" "SOMMER OUTPUT OC 7.5mm"
-			(at 199.9488 57.9878 0)
+			(at 183.4388 45.2878 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8895,8 +9392,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical"
-			(at 200.66 60.96 0)
+		(property "Footprint" "SommerCustom:PinSocket_1x04_P2.54mm_Vertical_SLIT"
+			(at 184.15 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8907,7 +9404,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 60.96 0)
+			(at 184.15 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8918,7 +9415,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 200.66 60.96 0)
+			(at 184.15 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8929,7 +9426,7 @@
 			)
 		)
 		(property "LCSC PN" "C2718488"
-			(at 200.66 60.96 0)
+			(at 184.15 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9611,6 +10108,183 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 38.1 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b43bfbc5-33fd-429d-9107-9e699cc36abb")
+		(property "Reference" "TP1"
+			(at 40.64 71.6279 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 40.64 74.1679 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 43.18 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 38.1 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "91d2258b-98c7-4d6f-89ff-ec8e932b839d")
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x04_Female")
+		(at 184.15 58.42 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b4e80545-dd8c-458b-8347-412146b40448")
+		(property "Reference" "J8"
+			(at 183.4388 57.9847 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SOMMER OUTPUT OC 8.5mm"
+			(at 183.4388 55.4478 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "SommerCustom:PinSocket_1x04_P2.54mm_Vertical_SLIT"
+			(at 184.15 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 184.15 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 184.15 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC PN" "C2718488"
+			(at 184.15 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bf6f8b7a-ba32-4c1a-98ba-edf910115c7b")
+		)
+		(pin "2"
+			(uuid "bb30e578-bcb8-41d8-98c6-4564786056bc")
+		)
+		(pin "3"
+			(uuid "4799a400-bb86-4987-8b9f-4728744f849d")
+		)
+		(pin "4"
+			(uuid "6e08971b-844b-4f0a-9e76-804608a192d5")
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Custom:2N7002DW")
 		(at 67.31 39.37 0)
 		(unit 1)
@@ -10033,6 +10707,82 @@
 			(project "SommerESP"
 				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
 					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 204.47 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c978cc97-8989-4d3c-90d3-01beac899b02")
+		(property "Reference" "H1"
+			(at 207.01 107.9499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 207.01 110.4899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:ToolingHole_1.152mm"
+			(at 204.47 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 204.47 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -10562,6 +11312,85 @@
 			(project "SommerESP"
 				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
 					(reference "#PWR0135")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 189.23 53.34 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea3dcb8c-f0ef-47ef-b4e4-e57d51de5eab")
+		(property "Reference" "#PWR0144"
+			(at 195.58 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 192.4049 52.9062 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.23 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 189.23 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1734ca4a-49b6-437f-ade3-e526d2ca191a")
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "#PWR0144")
 					(unit 1)
 				)
 			)
