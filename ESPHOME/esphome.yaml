@@ -3,7 +3,7 @@ esphome:
   name_add_mac_suffix: true
   project:
     name: "esphome.sommeresp"
-    version: "3.0"
+    version: "3.2"
 
 substitutions:
   device_name: "SommerESP"
@@ -11,7 +11,7 @@ substitutions:
   webserver_password: "sommeresp"
 
   project_name: "SommerESP by exico91"
-  project_version: "3.0"
+  project_version: "3.2"
 
 
 esp32:
