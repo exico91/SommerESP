@@ -93,6 +93,7 @@ Check [here](/pinout.md) for the pinout.
 | 1.0 - 2.0 | Dual board module with cable |
 | 3.0 | Single board, adds Ethernet compatibility. Supports only 9.5 mm distance |
 | 3.1 | Adds 7.5 mm distance compatibility |
+| 3.2 | Added fabrication holes to the PCB |
 
 ## 💡 Origins
 A thank you to https://github.com/jampez77/garage_door_sensor/ and https://github.com/azrael783/esphome_garagedoor_opener for giving me the ispiration to do this project, a lot of the code and core functionality is similar to these projects. Unfortunately neither did what I needed, cheap and invisible installation. Unfortunately the two Sommer modules (Conex and Output OC) are not cheap for what they are and using a DC-DC converter and relais externally is bulky and unsightly. I took the matter into my hands and now is almost plug and play and places where the two Sommer modules were.

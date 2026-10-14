@@ -5,13 +5,13 @@
       "Application": "Pcbnew",
       "Version": "10.0.6"
     },
-    "CreationDate": "2026-09-20T18:37:05+02:00"
+    "CreationDate": "2026-10-01T13:38:59+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "SommerESP",
       "GUID": "536f6d6d-6572-4455-9350-2e6b69636164",
-      "Revision": "3.1"
+      "Revision": "3.2"
     },
     "Size": {
       "X": 76.9125,
