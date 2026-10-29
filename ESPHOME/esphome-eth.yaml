@@ -13,6 +13,13 @@ substitutions:
   project_name: "SommerESP by exico91"
   project_version: "3.2"
 
+  # Full travel times of the door in seconds, used to estimate its position
+  # in %. 0 = not configured: the door is shown only as open/closed. Measure
+  # them with a stopwatch; they can also be set later from Home Assistant
+  # (Garage door open/close time). The percentage works only when both are set.
+  door_open_time: "0"
+  door_close_time: "0"
+
 
 esp32:
   board: esp32-c3-devkitm-1
@@ -72,20 +79,26 @@ sensor:
   - platform: adc
     pin: 4
     name: "Door Feedback"
-    update_interval: 2s
+    update_interval: 500ms
     id: status_feedback
     internal: True
 
 binary_sensor:
+  # ON when the door is fully closed: used as the close endstop of the cover.
   - platform: analog_threshold
-    name: "Door status"
+    name: "Door closed"
     sensor_id: status_feedback
     threshold: 0.015
-    device_class: garage_door
-    id: door_status
-    filters:
-      - invert:
+    id: door_closed
     internal: True
+    on_release:
+      # The door left the closed position without a command from us (remote,
+      # wall button): its movement can't be tracked, so assume fully open.
+      - lambda: |-
+          if (id(garage_door).current_operation == COVER_OPERATION_IDLE) {
+            id(garage_door).position = COVER_OPEN;
+            id(garage_door).publish_state();
+          }
 
   # BOOT button: hold for 10s to factory reset. It acts on release, so the
   # reboot never happens with GPIO9 held low (which would enter download mode).
@@ -107,6 +120,49 @@ globals:
     type: int
     restore_value: no
     initial_value: '0'  # 0=idle, 1=opening, 2=closing
+  - id: move_start
+    type: uint32_t
+    restore_value: no
+    initial_value: '0'  # millis() of the last open/close pulse
+
+number:
+  - platform: template
+    name: "Garage door open time"
+    id: open_time
+    entity_category: config
+    unit_of_measurement: s
+    min_value: 0
+    max_value: 120
+    step: 0.5
+    optimistic: true
+    restore_value: true
+    initial_value: ${door_open_time}
+    on_value:
+      - script.execute: apply_travel_times
+  - platform: template
+    name: "Garage door close time"
+    id: close_time
+    entity_category: config
+    unit_of_measurement: s
+    min_value: 0
+    max_value: 120
+    step: 0.5
+    optimistic: true
+    restore_value: true
+    initial_value: ${door_close_time}
+    on_value:
+      - script.execute: apply_travel_times
+
+script:
+  # With both travel times set, the cover estimates the position from them.
+  # Otherwise it moves instantly: open is shown as soon as the door is commanded
+  # to open, closed when the status input reports it, as before.
+  - id: apply_travel_times
+    then:
+      - lambda: |-
+          bool timed = id(open_time).state > 0 && id(close_time).state > 0;
+          id(garage_door).set_open_duration(timed ? id(open_time).state * 1000 : 1);
+          id(garage_door).set_close_duration(timed ? id(close_time).state * 1000 : 1);
 
 switch:
   - platform: gpio
@@ -139,52 +195,55 @@ button:
     entity_category: diagnostic
 
 cover:
-  - platform: template
+  # Time based cover: the position is estimated from the travel times, and
+  # setting a position sends a stop pulse when the estimate reaches it.
+  - platform: feedback
+    id: garage_door
     device_class: garage
     name: "Garage door"
+    # Set at boot from the travel time numbers (apply_travel_times).
+    open_duration: 1ms
+    close_duration: 1ms
+    close_endstop: door_closed
+    # The Sommer stops by itself at the ends, never send a stop there.
+    has_built_in_endstop: true
+    # Reversing while moving: stop first, then start the other way.
+    direction_change_wait_time: 1s
+    # Give up waiting for the close endstop (e.g. the door reversed on an obstacle).
+    max_duration: 150s
     open_action:
       - globals.set:
           id: last_direction
           value: '1'
+      - lambda: 'id(move_start) = millis();'
       - switch.turn_off: close_switch
       - switch.turn_on: open_switch
-      - delay: 250ms
-      - switch.turn_off: open_switch
     close_action:
       - globals.set:
           id: last_direction
           value: '2'
+      - lambda: 'id(move_start) = millis();'
       - switch.turn_off: open_switch
       - switch.turn_on: close_switch
-      - delay: 250ms
-      - switch.turn_off: close_switch
+    # The Sommer stops when it gets another pulse in the direction it is moving.
+    # Only pulse while the motor can still be moving: after the full travel time
+    # (120s without travel times) it has stopped by itself, and a pulse would
+    # start it again.
     stop_action:
-      - if:
-          condition:
-            lambda: 'return id(last_direction) == 1;'
-          then:
-            - switch.turn_on: open_switch
-            - delay: 250ms
-            - switch.turn_off: open_switch
-          else:
-            - if:
-                condition:
-                  lambda: 'return id(last_direction) == 2;'
-                then:
-                  - switch.turn_on: close_switch
-                  - delay: 250ms
-                  - switch.turn_off: close_switch
-      - globals.set:
-          id: last_direction
-          value: '0'
-    #optimistic: true
-    lambda: |-
-      if (id(door_status).state) {
-        return COVER_OPEN;
-      } else {
-        return COVER_CLOSED;
-      }
-    #assumed_state: true
+      - lambda: |-
+          if (id(last_direction) == 0)
+            return;
+          bool opening = id(last_direction) == 1;
+          switch_::Switch *relay = opening ? id(open_switch) : id(close_switch);
+          // The command pulse is still on: the stop came right after the command
+          // (target already reached without travel times), keep moving.
+          if (relay->state)
+            return;
+          bool timed = id(open_time).state > 0 && id(close_time).state > 0;
+          float travel = timed ? (opening ? id(open_time).state : id(close_time).state) : 120;
+          if (millis() - id(move_start) < travel * 1000)
+            relay->turn_on();
+          id(last_direction) = 0;
 
 status_led:
   pin:
