@@ -4623,6 +4623,12 @@
 		(color 0 0 0 0)
 		(uuid "d99408e8-5dba-4eb7-be0e-16bfe4d2a983")
 	)
+	(junction
+		(at 38.1 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e87ef702-5e95-40f9-a552-17fc532a288f")
+	)
 	(no_connect
 		(at 189.23 68.58)
 		(uuid "521d0b80-57e5-475c-ab12-a2c4420c5051")
@@ -4894,6 +4900,16 @@
 			(type default)
 		)
 		(uuid "e2a96efe-8240-4b63-ac84-355724953528")
+	)
+	(wire
+		(pts
+			(xy 38.1 97.79) (xy 38.1 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7a0607e-242b-41e3-8750-0a1156f9a2b6")
 	)
 	(wire
 		(pts
@@ -9360,6 +9376,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 38.1 97.79 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "79543656-8fb7-4731-b671-66a2f7349c4c")
+		(property "Reference" "TP2"
+			(at 40.64 93.2179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RST"
+			(at 40.64 95.7579 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 43.18 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 38.1 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3327e5a9-176b-452a-bb46-bf09db8f7fc9")
+		)
+		(instances
+			(project "SommerESP"
+				(path "/fdfaab82-b631-42c7-9b66-01e568778cad"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x04_Female")
 		(at 184.15 48.26 180)
 		(unit 1)
@@ -10130,7 +10225,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "BOOT"
 			(at 40.64 74.1679 0)
 			(show_name no)
 			(do_not_autoplace no)
