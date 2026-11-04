@@ -262,6 +262,10 @@
           "drill": 0.2
         },
         {
+          "diameter": 0.6,
+          "drill": 0.4
+        },
+        {
           "diameter": 0.8,
           "drill": 0.4
         },
@@ -280,7 +284,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "3.2"
+      "sch_revision": "3.2.1"
     },
     "layer_pairs": [],
     "layer_presets": [],
