@@ -5,6 +5,11 @@ A plug and play ESP32-C3 board to control Sommer garage doors based on ESPHOME
 
 This combo is designed to replace the Sommer Conex Module and the Sommer Output OC Module. 
 
+> [!TIP]
+> **Where to get in touch**
+> - 🐛 **Issues:** [report a problem or suggest an improvement](https://github.com/exico91/SommerESP/issues) for the board.
+> - 💬 **Discussions:** [ask a question or share a compatibility report](https://github.com/exico91/SommerESP/discussions).
+
 ## ⚙️ How it works
 The Sommer Conex Module is designed to replicate the press of the buttons on the controller of the garage door and the Sommer Output OC just provide the signal for the status and 24 Volts DC.  
 
@@ -70,6 +75,8 @@ Check [here](/pinout.md) for the pinout.
 | 9110 Pro+  | Original installation that created this project. This model has a wall mount control board with a 2 button keypad.                                         | Alessio D   |
 | S 9050 pro | Need to manually add the DIP switch selector. Check [here](https://github.com/exico91/SommerESP/issues/5#issuecomment-2755661908)                     | M3c4tr0x    |
 | A800 XL    | Compatible but the Conex pins are shifted. Requires board version 2 or jumper cables.                                                                    | [jkremlacek](https://github.com/jkremlacek) |
+
+Tested SommerESP on another model? Please share your result in [Discussions](https://github.com/exico91/SommerESP/discussions), whether it worked or not.
 
 > [!WARNING]
 > Please do check the distance between the power pins and the right pin on the button connector. This version of SommerESP is compatible with Sommer boards where the distance is around 9.5 mm or 7.5 mm, just check which is correct and solder the connector for the Conex section in the 9.5 (default) or 7.5 place. If you are buying from Tindie the default will be 9.5, if you need 7.5 please contact me.

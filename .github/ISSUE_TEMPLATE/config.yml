@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Ask a question
+    url: https://github.com/exico91/SommerESP/discussions/categories/q-a
+    about: Questions about the board, installation or firmware go in Discussions.
+  - name: ✅ Share a compatibility report
+    url: https://github.com/exico91/SommerESP/discussions
+    about: Tested SommerESP on a Sommer model? Share the result in Discussions, whether it worked or not.
