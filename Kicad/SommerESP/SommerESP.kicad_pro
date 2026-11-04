@@ -735,7 +735,7 @@
         "uuid": "fdfaab82-b631-42c7-9b66-01e568778cad"
       }
     ],
-    "used_designators": "#PWR142-145,H1-3,J7-8,TP1",
+    "used_designators": "#PWR142-147,H1-3,J7-8,TP1,TP3-5",
     "variants": []
   },
   "sheets": [
