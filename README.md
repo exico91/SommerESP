@@ -43,6 +43,26 @@ If your installation requires better WiFi reception, an external antenna version
 
 Connect the adapter cable to the U.FL connector on the board and attach the external antenna.
 
+### 🛠️ Settings
+
+
+#### Door position (%)
+> [!NOTE]
+> This setting require firmware version **3.3** or later.
+
+By default the door is shown only as open or closed. Once the travel times are set, the position is shown as a percentage and the door can be moved to a specific position from Home Assistant.
+
+1. With a stopwatch, measure how long the door takes to open fully (from fully closed) and to close fully (from fully open).
+2. In Home Assistant open the SommerESP device page and, under **Configuration**, enter the measured values in **Garage door open time** and **Garage door close time** (in seconds, 0.1 s resolution, up to 120 s). The same fields are available on the ESP web page.
+3. Close the door fully once, so the estimated position is aligned with the closed endstop.
+
+The percentage is enabled only when both times are set: set either of them to 0 to go back to plain open/closed. The values are saved on the board and survive reboots. You can also set the defaults directly in the yaml with the `door_open_time` and `door_close_time` substitutions.
+
+> [!TIP]
+> The position is estimated from the travel times. If the door is moved with the remote or the wall button, the estimate can drift: it is realigned every time the door closes fully.
+
+Still, this uses an estimated position because the motherboard does not communicate the percentage natively.
+
 ### 🔌 Flashing and extra pins
 To flash connect you serial programmer to the exposed pins on the controller board. DO NOT connect the programmer while the board is connected to the power board or inserted in the Sommer controller.
 From top to bottom the pins are in this order:
@@ -96,6 +116,7 @@ Tested SommerESP on another model? Please share your result in [Discussions](htt
 | 3.0 | 2026.5.3 | Added compatibility for ESPHome 2026.5.3+, added Ethernet module version |
 | 3.1 | 2026.5.3 | Cover stop function is now working |
 | 3.2 | 2026.9.0 | Added factory reset function to the BOOT button (hold for 10 seconds) |
+| 3.3 | 2026.10.2 | Added garage door percentage option
 
 ### Hardware Release Log
 
