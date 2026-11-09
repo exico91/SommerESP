@@ -3,7 +3,7 @@ esphome:
   name_add_mac_suffix: true
   project:
     name: "esphome.sommeresp"
-    version: "3.2"
+    version: "3.3"
 
 substitutions:
   device_name: "SommerESP"
@@ -11,7 +11,7 @@ substitutions:
   webserver_password: "sommeresp"
 
   project_name: "SommerESP by exico91"
-  project_version: "3.2"
+  project_version: "3.3"
 
   # Full travel times of the door in seconds, used to estimate its position
   # in %. 0 = not configured: the door is shown only as open/closed. Measure
